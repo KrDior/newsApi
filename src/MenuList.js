@@ -1,7 +1,7 @@
 /* eslint-disable indent */
-import defaultConfig from './defaultConfig';
-import menuData from './menuData';
-import MenuItem from './MenuItem';
+import defaultConfig from "./defaultConfig";
+import menuData from "./menuData";
+import MenuItem from "./MenuItem";
 
 export default class MenuList {
     constructor(parentElement = document.body, menuItemsData = menuData) {
@@ -53,20 +53,20 @@ export default class MenuList {
 
     handleMouseOver() {
         this.element.classList.add(defaultConfig.classNames.menuListActive);
-        this.element.removeEventListener('mouseenter', this.handleMouseOver);
-        this.element.addEventListener('mouseleave', this.handleMouseOut);
-        document.addEventListener('keydown', this.handleKeyboard);
+        this.element.removeEventListener("mouseenter", this.handleMouseOver);
+        this.element.addEventListener("mouseleave", this.handleMouseOut);
+        document.addEventListener("keydown", this.handleKeyboard);
     }
 
     handleMouseOut() {
         this.element.classList.remove(defaultConfig.classNames.menuListActive);
-        this.element.addEventListener('mouseenter', this.handleMouseOver);
-        this.element.removeEventListener('mouseleave', this.handleMouseOut);
-        document.removeEventListener('keydown', this.handleKeyboard);
+        this.element.addEventListener("mouseenter", this.handleMouseOver);
+        this.element.removeEventListener("mouseleave", this.handleMouseOut);
+        document.removeEventListener("keydown", this.handleKeyboard);
     }
 
     addList() {
-        this.element = document.createElement('ul');
+        this.element = document.createElement("ul");
         this.element.classList.add(defaultConfig.classNames.menuClass);
     }
 
@@ -78,7 +78,7 @@ export default class MenuList {
         this.items[this.defaultActive].setActive();
         this.selectedInd = 0;
 
-        this.element.addEventListener('mouseenter', this.handleMouseOver);
+        this.element.addEventListener("mouseenter", this.handleMouseOver);
     }
 
     drawList() {
@@ -89,9 +89,9 @@ export default class MenuList {
     }
 
     destroy() {
-        this.removeElement = document.querySelector('.simple-menu');
-        this.removeElement.removeEventListener('mouseenter', this.handleMouseOver);
-        this.removeElement.removeEventListener('mouseleave', this.handleMouseOut);
+        this.removeElement = document.querySelector(".simple-menu");
+        this.removeElement.removeEventListener("mouseenter", this.handleMouseOver);
+        this.removeElement.removeEventListener("mouseleave", this.handleMouseOut);
         this.removeElement.parentNode.removeChild(this.removeElement);
     }
 }

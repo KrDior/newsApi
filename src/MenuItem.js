@@ -20,9 +20,7 @@ export default class MenuItem {
 
     setActive() {
         this.element.classList.add(defaultConfig.classNames.menuItemActive);
-        this.element.classList.remove(
-            defaultConfig.classNames.menuItemDisabled
-        );
+        this.element.classList.remove(defaultConfig.classNames.menuItemDisabled);
         this.element.setAttribute("status", "active");
     }
 
