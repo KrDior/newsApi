@@ -1,4 +1,4 @@
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap";
 
 .jumbotron {
   padding-top: 3rem;
@@ -20,8 +20,6 @@
 
 .jumbotron-heading {
   font-weight: 300;
-  color: red;
-  background-color: red;
 }
 
 .jumbotron .container {

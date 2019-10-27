@@ -11,14 +11,13 @@ require('dotenv').config();
 module.exports = {
     entry: [
         path.resolve(__dirname, './src/app/index.js'),
-        path.resolve(__dirname, './src/style/app.scss'),
     ],
     output: {
         path: `${__dirname}/dist`,
         filename: 'bundle.js',
     },
     devtool: 'source-map',
-    mode: 'production',
+    mode: 'development',
     devServer: {
         contentBase: path.join(__dirname, './src/public'),
         compress: true,
