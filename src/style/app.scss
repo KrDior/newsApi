@@ -10,6 +10,7 @@ $primary-color: rgba(247, 242, 242, 0.966);
   font-weight: normal;
   font-style: normal;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -19,17 +20,8 @@ body {
   background-color: $primary-color;
   list-style: none;
   .card {
-    width: 300px;
     .card-img-top {
-      width: 300px;
-    }
-  }
-
-  ul {
-    li {
-      a {
-        font-family: "Montserrat", sans-serif;
-      }
+	  max-width: 100%;
     }
   }
 }

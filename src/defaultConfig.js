@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const defaultConfig = {
-
+    preferedLanguage: 'en',
+    preferedCountry: 'ru',
     newsCategory: [
         'business',
         'entertainment',
@@ -10,13 +11,23 @@ const defaultConfig = {
         'technology',
     ],
     newsOnPage: [
+        1,
         3,
         5,
         7,
         10,
         20,
     ],
+    inputCategoryId: 'inputCategory',
+    inputNumberId: 'inputNumberNews',
     classNames: {
+        mainCanvas: {
+            canvas1: 'album',
+            canvas2: 'py-5',
+            canvas3: 'bg-light',
+            container: 'container',
+            containerId: 'newsContainer',
+        },
         newsCard: {
             position: 'col-md-4',
             cardElement: 'card',
@@ -29,17 +40,16 @@ const defaultConfig = {
             button: 'btn',
             btnPrimary: 'btn-primary',
         },
+        modalParentElement: 'modal-body-wrapper',
+        modalInput: {
+            inputItem: 'modal-body',
+            inputGroup1: 'input-group',
+            inputGroup2: 'mb-3',
+            inputGroupApp: 'input-group-append',
+            inputGroupText: 'input-group-text',
+            select: 'custom-select',
+        },
         cardRow: 'row',
-        menuItemActive: 'menu-item__active',
-        menuItemDisabled: 'menu-item__disabled',
-        menuListActive: 'menu-list__active',
-        menuLinkClass: 'link-item',
-    },
-    typeOfElement: {
-        menu: 'linksMenu',
-    },
-    defaultActive: {
-        element: 0,
     },
 };
 

@@ -1,49 +1,47 @@
+/* eslint-disable max-len */
 import defaultConfig from '../../defaultConfig';
 
 export default class ModalWindowFiller {
-    constructor(categoryOption) {
-        this.categoryOption = categoryOption;
+    constructor(parentModalElem, newsCategory, newsOnPage, inputCategoryId, inputNumberId) {
+        const category = 'Category';
+        const newsNumber = 'News per page';
 
-        this.addCategoryOption();
+        this.modalWindow = null;
+        this.parent = parentModalElem;
+        this.addOption(newsCategory, inputCategoryId, category);
+        this.addOption(newsOnPage, inputNumberId, newsNumber);
     }
 
-    addCategoryOption = () => {
-        const {
-            imgPath, imgText, title, text, link,
-        } = itemData;
+    addOption = (optionParams, id, labelText) => {
+        this.selectElem = document.createElement('select');
+        this.selectElem.classList.add(defaultConfig.classNames.modalInput.select);
+        this.selectElem.id = id;
+        optionParams.forEach((param) => {
+            const optionSelect = document.createElement('option');
+            optionSelect.value = param;
+            optionSelect.innerText = (typeof param === 'string') ? param.toUpperCase() : param;
+            this.selectElem.appendChild(optionSelect);
+        });
 
-        this.cardItem = document.createElement('div');
-        this.cardItem.classList.add(defaultConfig.classNames.newsCard.wrapper);
-        this.cardItem.style.width = this.style.width || '18rem';
+        this.inputWrapper = document.createElement('div');
+        this.inputWrapper.classList.add(defaultConfig.classNames.modalInput.inputGroup1, defaultConfig.classNames.modalInput.inputGroup1);
 
-        this.cardImage = document.createElement('img');
-        this.cardImage.classList.add(defaultConfig.classNames.newsCard.image);
-        this.cardImage.setAttribute('src', imgPath || '');
-        this.cardImage.setAttribute('alt', imgText || '');
+        this.labelWrapper = document.createElement('div');
+        this.labelWrapper.classList.add(defaultConfig.classNames.modalInput.inputGroupApp);
 
-        this.cardBody = document.createElement('div');
-        this.cardBody.classList.add(defaultConfig.classNames.newsCard.body);
+        this.inputLabel = document.createElement('label');
+        this.inputLabel.classList.add(defaultConfig.classNames.modalInput.inputGroupText);
+        this.inputLabel.setAttribute('for', id);
+        this.inputLabel.innerText = labelText;
 
-        this.cardTitle = document.createElement('h5');
-        this.cardTitle.classList.add(defaultConfig.classNames.newsCard.title);
-        this.cardTitle.innerText = title || '';
+        this.labelWrapper.appendChild(this.inputLabel);
+        this.inputWrapper.appendChild(this.selectElem);
+        this.inputWrapper.appendChild(this.labelWrapper);
 
-        this.cardText = document.createElement('p');
-        this.cardText.classList.add(defaultConfig.classNames.newsCard.text);
-        this.cardText.innerText = text || '';
+        this.inputItem = document.createElement('div');
+        this.inputItem.classList.add(defaultConfig.classNames.modalInput.inputItem);
 
-        this.cardLink = document.createElement('a');
-        this.cardLink.classList.add(defaultConfig.classNames.newsCard.button);
-        this.cardLink.classList.add(defaultConfig.classNames.newsCard.btnPrimary);
-        this.cardLink.setAttribute('href', link || '#');
-        this.cardLink.innerText = 'Go to news';
-
-        this.cardBody.appendChild(this.cardTitle);
-        this.cardBody.appendChild(this.cardText);
-        this.cardBody.appendChild(this.cardLink);
-
-        this.cardItem.appendChild(this.cardImage);
-        this.cardItem.appendChild(this.cardBody);
-        document.body.appendChild(this.cardItem);
+        this.inputItem.appendChild(this.inputWrapper);
+        this.parent.appendChild(this.inputItem);
     }
 }

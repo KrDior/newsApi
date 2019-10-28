@@ -2,14 +2,14 @@
 import defaultConfig from '../../defaultConfig';
 
 export default class NewsCard {
-    constructor(parentElem, title, description, url, urlToImage, content, styleData) {
+    constructor(parentElem, title, description, url, urlToImage, content) {
         this.parentElem = parentElem;
         this.title = title || '';
         this.description = description || '';
         this.url = url || '';
         this.urlToImage = urlToImage || '#';
         this.content = content || '';
-        this.style = styleData || '1rem';
+
         this.createItem();
     }
 
@@ -19,7 +19,7 @@ export default class NewsCard {
 
         this.cardItem = document.createElement('div');
         this.cardItem.classList.add(defaultConfig.classNames.newsCard.cardElement, defaultConfig.classNames.newsCard.cardElement2, defaultConfig.classNames.newsCard.cardElement3);
-        this.cardItem.style.width = this.style.width;
+
 
         this.cardImage = document.createElement('img');
         this.cardImage.classList.add(defaultConfig.classNames.newsCard.image);
@@ -42,6 +42,7 @@ export default class NewsCard {
         this.cardLink.classList.add(defaultConfig.classNames.newsCard.button);
         this.cardLink.classList.add(defaultConfig.classNames.newsCard.btnPrimary);
         this.cardLink.setAttribute('href', this.url);
+        this.cardLink.setAttribute('target', '_blank');
         this.cardLink.innerText = 'Go to news';
 
         this.cardBody.appendChild(this.cardTitle);
