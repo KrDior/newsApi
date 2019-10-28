@@ -3,7 +3,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DuplicatesPlugin } = require('inspectpack/plugin');
-const CircularDependencyPlugin = require('circular-dependency-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 require('dotenv').config();
@@ -20,6 +19,7 @@ module.exports = {
     mode: 'development',
     devServer: {
         contentBase: path.join(__dirname, './src/public'),
+        publicPath: 'http://localhost:9000/',
         compress: true,
         port: 9000,
     },
@@ -31,7 +31,6 @@ module.exports = {
             inject: 'body',
         }),
         new DuplicatesPlugin(),
-        new CircularDependencyPlugin(),
         new webpack.DefinePlugin({
             API_KEY: JSON.stringify(process.env.API_KEY),
         }),
