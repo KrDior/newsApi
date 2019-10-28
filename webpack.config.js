@@ -1,6 +1,5 @@
 /* eslint-disable global-require */
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DuplicatesPlugin } = require('inspectpack/plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -25,11 +24,6 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './src/public/index.html'),
-            filename: 'index.html',
-            inject: 'body',
-        }),
         new DuplicatesPlugin(),
         new webpack.DefinePlugin({
             API_KEY: JSON.stringify(process.env.API_KEY),

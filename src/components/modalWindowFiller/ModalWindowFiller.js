@@ -1,13 +1,13 @@
 import defaultConfig from '../../defaultConfig';
 
-export default class ModalWindow {
-    constructor(itemData, styleData) {
-        this.itemData = itemData;
-        this.style = styleData;
-        this.createItem(itemData);
+export default class ModalWindowFiller {
+    constructor(categoryOption) {
+        this.categoryOption = categoryOption;
+
+        this.addCategoryOption();
     }
 
-    createItem = (itemData) => {
+    addCategoryOption = () => {
         const {
             imgPath, imgText, title, text, link,
         } = itemData;

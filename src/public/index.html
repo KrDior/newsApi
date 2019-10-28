@@ -15,10 +15,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-8 col-md-7 py-4">
-						<h4 class="text-white">About</h4>
-						<p class="text-muted">Add some information about the album below, the author, or any other
-							background context. Make it a few sentences long so folks can pick up some informative
-							tidbits. Then, link them off to some social networking sites or contact information.</p>
+						<h4 class="text-white">About us</h4>
+						<p class="text-muted">Welcom to news portal.</p>
 					</div>
 					<div class="col-sm-4 offset-md-1 py-4">
 						<h4 class="text-white">Contact</h4>
@@ -39,7 +37,7 @@
 						viewBox="0 0 24 24" focusable="false">
 						<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
 						<circle cx="12" cy="13" r="4" /></svg>
-					<strong>Album</strong>
+					<strong>Read us to Instagram</strong>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
 					aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,64 +49,54 @@
 
 	<main role="main">
 
-		<div class="input-group mb-3">
-			<select class="custom-select" id="inputGroupSelect02">
-				<option selected>Choose...</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
-			</select>
-			<div class="input-group-append">
-				<label class="input-group-text" for="inputGroupSelect02">Options</label>
-			</div>
-		</div>
-
-
-		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-			Launch demo modal
-		</button>
-
 		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		<div class="modal fade" id="modalFilterNews" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 			aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+						<h5 class="modal-title" id="exampleModalLabel">Choose parameters for prefered news</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
 					<div class="modal-body">
 						<div class="input-group mb-3">
-							<select class="custom-select" id="inputGroupSelect02">
-								<option selected>Choose...</option>
-								<option value="1">One</option>
-								<option value="2">Two</option>
-								<option value="3">Three</option>
+							<select class="custom-select" id="inputCategory">
 							</select>
 							<div class="input-group-append">
-								<label class="input-group-text" for="inputGroupSelect02">Options</label>
+								<label class="input-group-text" for="inputCategory">Category</label>
 							</div>
 						</div>
 					</div>
+
+					<div class="modal-body">
+							<div class="input-group mb-3">
+								<select class="custom-select" id="inputNumberNews">
+								</select>
+								<div class="input-group-append">
+									<label class="input-group-text" for="inputNumberNews">News per page</label>
+								</div>
+							</div>
+						</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<button id="getNewsButton" type="button" class="btn btn-primary">Get a news</button>
 					</div>
 				</div>
 			</div>
 		</div>
 		<section class="jumbotron text-center">
 			<div class="container">
-				<h1 class="jumbotron-heading">Album example</h1>
-				<p class="lead text-muted">Something short and leading about the collection below—its contents, the
-					creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
-					entirely.</p>
+				<h1 class="jumbotron-heading">Only hot news for you</h1>
+				<p class="lead text-muted"> We provide trusted World and UK news as well as local and regional
+					perspectives.
+					The latest global news, sport, weather and documentaries.</p>
 				<p>
-					<a href="#" class="btn btn-primary my-2">Main call to action</a>
-					<a href="#" class="btn btn-secondary my-2">Secondary action</a>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFilterNews">
+						Launch news seach box
+					</button>
 				</p>
 			</div>
 		</section>
@@ -125,9 +113,9 @@
 			<p class="float-right">
 				<a href="#">Back to top</a>
 			</p>
-			<p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-			<p>New to Bootstrap? <a href="{{ site.url }}/">Visit the homepage</a> or read our <a
-					href="{{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/introduction/">getting started
+			<p>News portal &copy; Great and wide customication portal!</p>
+			<p>New to Bootstrap? <a href="https://newsapi.org/" target="_blank">Visit the homepage</a> or read our
+				<a href="https://newsapi.org/docs/get-started/" target="_blank">getting started
 					guide</a>.</p>
 		</div>
 	</footer>

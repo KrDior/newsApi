@@ -1,14 +1,21 @@
 /* eslint-disable no-undef */
 const defaultConfig = {
 
-    newsCategory: {
-        business: 'business',
-        entertainment: 'entertainment',
-        general: 'general',
-        science: 'science',
-        sports: 'sports',
-        technology: 'technology',
-    },
+    newsCategory: [
+        'business',
+        'entertainment',
+        'general',
+        'science',
+        'sports',
+        'technology',
+    ],
+    newsOnPage: [
+        3,
+        5,
+        7,
+        10,
+        20,
+    ],
     classNames: {
         newsCard: {
             position: 'col-md-4',
