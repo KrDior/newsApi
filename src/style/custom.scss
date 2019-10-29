@@ -1,10 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
 
+$primary-color: rgba(247, 242, 242, 0.966);
+
 .jumbotron {
   padding-top: 3rem;
   padding-bottom: 3rem;
   margin-bottom: 0;
-  background-color: #fff;
+  background-color: $primary-color;
 
   p:last-child {
     margin-bottom: 0;

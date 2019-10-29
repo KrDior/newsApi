@@ -11,3 +11,4 @@
 /lib/rules/utils/unicode/is-combining-character.js
 test.js
 !.eslintrc.js
+/dist/**

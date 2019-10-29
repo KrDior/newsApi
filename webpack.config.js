@@ -3,6 +3,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DuplicatesPlugin } = require('inspectpack/plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 require('dotenv').config();
 
@@ -27,6 +28,11 @@ module.exports = {
         new DuplicatesPlugin(),
         new webpack.DefinePlugin({
             API_KEY: JSON.stringify(process.env.API_KEY),
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, './src/public/index.html'),
+            filename: 'index.html',
+            inject: false,
         }),
     ],
     optimization: {
